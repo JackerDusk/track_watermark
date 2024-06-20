@@ -1,0 +1,24 @@
+export default {
+    layers:{
+        create_layers:'创建新层',
+        table:{
+            id:'ID',
+            project:'归属项目',
+            left_flow:'剩余流量',
+            description:'描述',
+            action:'操作',
+            name:'层名称',
+            last_modified:'最后修改时间',
+        },
+        dialogInfo:{
+            dialog_create:'创建层',
+            dialog_edit:'编辑层'
+        },
+        form:{
+            id:'层ID',
+            project:'项目',
+            layer_name:'层名称',
+            description_optional:'描述（可选）'
+        },
+    },
+}
