@@ -42,7 +42,6 @@ import { useRouter, Router } from 'vue-router'
 import {getProjects} from '@/api/project'
 import {useProjectStore} from '@/store/project'
 import { ElMessage } from 'element-plus';
-import { MailOutlined, AppstoreOutlined, SettingOutlined } from '@ant-design/icons-vue';
 
 const current = ref(['mail'])
 const activeIndex = ref('1')

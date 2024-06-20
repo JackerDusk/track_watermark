@@ -1,28 +1,100 @@
 <template>
   <div class="container">
-    <div class="card">
-      <div class="img-card">
-        <video preload="auto" class="img-card" poster="https://sb.kaleidousercontent.com/67418/840x560/d749ed76de/manuel-poster.jpg" autoplay playsinline="true" src="https://sb.kaleidousercontent.com/67418/x/9289c7b8dd/manuel_compressed.mp4"></video>
-        <div style="font-size: 3.75rem;font-weight: bold;
-        line-height: 4.25rem;">视频水印擦除</div>
+    <div class="des">
+      <h1>Get High Resolution Video</h1>
+      <p class="lead">
+        <span class="font-weight-bold" style="text-transform: uppercase;">1 Video = 1 Credit</span>
+      </p>
+    </div>
+    <div>
+      <div class="pricing-overview">
+        <el-row justify="center" class="pricing-row">
+          <el-col :span="8">
+            <el-card class="upper" style="width:300px;">
+              <h2>goPay as you </h2>
+              <div>
+                <div>
+                  <div style="text-align: center; color: rgb(15, 112, 230); line-height: 1; margin-bottom: 15px;">
+                    <span class="h3" style="font-size: 2rem;font-weight: 400;display: inline-block;vertical-align: middle;">US
+                    $ 5</span>
+                    <span style="font-size: 12px; display: inline-block; vertical-align: middle; margin-left: 5px; margin-top: 4px;">/ image</span>
+                  </div>
+                </div>
+                <el-table :data="tableData" class="plans-tabs" style="margin: 0px auto 20px;width: 100%">
+                  <el-table-column prop="count" label="Count"/>
+                  <el-table-column prop="sum" label="Sum" />
+                  <el-table-column prop="price" label="Price"/>
+                </el-table>
+              </div>
+            </el-card>
+          </el-col>
+          <el-col :span="8">
+            <el-card class="upper" style="width:300px;">
+              <h2>Subscription Plan</h2>
+              <div>
+                <div>
+                  <div style="text-align: center; color: rgb(15, 112, 230); line-height: 1; margin-bottom: 15px;">
+                    <span class="h3" style="font-size: 2rem;font-weight: 400;display: inline-block;vertical-align: middle;">US
+                    $ 3</span>
+                    <span style="font-size: 12px; display: inline-block; vertical-align: middle; margin-left: 5px; margin-top: 4px;">/ image</span>
+                  </div>
+                </div>
+                <el-table :data="tableData" class="plans-tabs" style="margin: 0px auto 20px;width: 100%">
+                  <el-table-column prop="count" label="Count"/>
+                  <el-table-column prop="sum" label="Sum" />
+                  <el-table-column prop="price" label="Price"/>
+                </el-table>
+              </div>
+            </el-card>
+          </el-col>
+          <el-col :span="8">
+            <el-card class="upper" style="width:300px;">
+              <h2>High-Volume Solutions </h2>
+              <div>
+                <div>
+                  <div style="text-align: center; color: rgb(15, 112, 230); line-height: 1; margin-bottom: 15px;">
+                    <span class="h3" style="font-size: 2rem;font-weight: 400;display: inline-block;vertical-align: middle;">100K + Video</span>
+                    <span style="font-size: 12px; display: inline-block; vertical-align: middle; margin-left: 5px; margin-top: 4px;">/ year</span>
+                  </div>
+                </div>
+                <el-tree>
+                  
+                </el-tree>
+              </div>
+            </el-card>
+          </el-col>
+        </el-row>
       </div>
-      <el-upload
-              class="upload"
-              drag
-              action="https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15"
-              multiple
-            >
-              <el-button type="primary">
-                上传图片
-              </el-button>
-              <div style="font-size: 1.25rem;
-    line-height: 1.75rem;font-weight: 600;">或者拖放一个文件</div>
-            </el-upload>
+      <div class="text-center"></div>
     </div>
   </div>
 </template>
 
 <script lang="ts" setup>
+  import { ref } from 'vue'
+  import { ElTable } from 'element-plus'
+
+  const tableData = [{
+    count: '1 Credit',
+    sum: 'US$ 5',
+    price:'US$ 5/video'
+  },{
+    count: '10 Credit',
+    sum: 'US$ 49',
+    price:'US$ 4.9/video'
+  },{
+    count: '100 Credit',
+    sum: 'US$ 40',
+    price:'US$ 4/video'
+  },{
+    count: '200 Credit',
+    sum: 'US$ 3.5',
+    price:'US$ 3.5/video'
+  },{
+    count: '500 Credit',
+    sum: 'US$ 3',
+    price:'US$ 3/video'
+  }]
 
 </script>
 
