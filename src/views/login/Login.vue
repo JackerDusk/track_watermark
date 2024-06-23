@@ -28,13 +28,13 @@
               </div>
             </el-col>
             <el-col>
-              <el-input v-model="input" style="width: 400px;height: 48px;font-size:24px;" placeholder="Email" />
+              <el-input v-model="input" style="width: 400px;height: 48px;font-size:20px;" placeholder="Email" />
             </el-col>
             <el-col>
-              <el-input v-model="input" style="width: 400px;height: 48px;font-size:24px;margin-top:20px;" placeholder="Password" />
+              <el-input v-model="input" style="width: 400px;height: 48px;font-size:20px;margin-top:20px;" placeholder="Password" />
             </el-col>
             <el-col>
-              <el-radio value="1" style="width: 400px;height: 48px;font-size:24px;margin-top:20px;">Remember Me</el-radio>
+              <el-checkbox v-model="checkbox" value="1" style="width: 400px;height: 48px;font-size:24px;margin-top:20px;">Remember Me</el-checkbox>
             </el-col>
             <el-col :span="24" :push="8">
               <el-button size="large" @click="facebookLogin" class="login-bt" round>Login</el-button>
@@ -67,16 +67,27 @@
               </div>
             </el-col>
             <el-col>
-              <span>Email</span>
+              <h3 style="color: #666;">Email</h3>
               <el-input v-model="input" style="width: 400px;height: 48px;font-size:24px;" />
             </el-col>
             <el-col style="margin-top:20px;">
-              <span>Password (6 characters minimum)</span>
+              <h3 style="color: #666;">Password (<span style="font-style: italic;">6 characters minimum</span>)</h3>
               <el-input v-model="input" style="width: 400px;height: 48px;font-size:24px;"/>
             </el-col>
             <el-col style="margin-top:20px;">
-              <span>Password confirmation</span>
+              <h3 style="color: #666;">Password confirmation</h3>
               <el-input v-model="input" style="width: 400px;height: 48px;font-size:24px;"/>
+            </el-col>
+            <el-col :span="24">
+              <el-checkbox v-model="checked" label="1">
+                我同意
+                <el-link type="primary">服务条款</el-link>、
+                <el-link type="primary">基本条款及交易条件</el-link> 和 
+                <el-link type="primary">隐私政策</el-link>。
+              </el-checkbox>
+              <el-checkbox v-model="checked" label="1">
+                请给我发送有关 Teclips 产品和服务的最新消息。
+              </el-checkbox>
             </el-col>
             <el-col :span="24" :push="8" style="margin-top:20px;">
               <el-button size="large" @click="facebookLogin" class="login-bt" round>Sign up</el-button>
@@ -84,6 +95,10 @@
           </el-row>
         </el-tab-pane>
       </el-tabs>
+      <el-col>
+        <el-link type="primary">忘记密码？</el-link><br/>
+        <el-link type="primary">没有收到确认邮件？</el-link>
+      </el-col>
     </div>
   </div>
 </template>
@@ -194,7 +209,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
     padding: 40px 20px 40px 20px;
 
     .lg-pane {
-
+      
       .el-tabs__item {
         font-size: 24px;
         weight: 600;
@@ -204,6 +219,7 @@ const submitForm = (formEl: FormInstance | undefined) => {
   .img-icon{
     width: 28px;
     height: 28px;
+    margin-right: 7px;
   }
   .bt{
     width: 260px;
